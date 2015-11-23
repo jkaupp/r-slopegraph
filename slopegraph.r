@@ -200,7 +200,7 @@ plot_slopegraph <- function(df, font_size) {
     gg <- ggplot(df,aes(x=x,y=ypos)) +
         geom_line(aes(group=group), color=df$colour) +
         geom_point(colour="white",size=20) + #def 8
-        geom_text(aes(label=y),size=fontSize, color = df$colour) +
+        geom_text(aes(label=y),size=fontSize, color = df$label.colour) +
         scale_y_continuous(name="", breaks=yvals, labels=ylabs)
     gg.form <- gg + theme_slopegraph()
     return(gg.form)
