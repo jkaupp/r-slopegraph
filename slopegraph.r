@@ -198,9 +198,9 @@ plot_slopegraph <- function(df, font_size) {
     yvals <- subset(df, x==head(x,1))$ypos
     fontSize <- font_size
     gg <- ggplot(df,aes(x=x,y=ypos)) +
-        geom_line(aes(group=group),colour=df$colour) +
+        geom_line(aes(group=group), color=df$colour) +
         geom_point(colour="white",size=20) + #def 8
-        geom_text(aes(label=y),size=fontSize) +
+        geom_text(aes(label=y),size=fontSize, color = df$colour) +
         scale_y_continuous(name="", breaks=yvals, labels=ylabs)
     gg.form <- gg + theme_slopegraph()
     return(gg.form)
